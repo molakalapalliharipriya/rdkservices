@@ -38,10 +38,7 @@
 
 bool ACRModeEnabled = true;
 bool LARModeEnabled = true;
-<<<<<<< HEAD
-=======
 int Svalue = 0;
->>>>>>> RDK-41446: LAR Client Implementation
 JsonArray acrevents_arr;
 
 using namespace std;
@@ -64,10 +61,7 @@ namespace WPEFramework
             Register("setLogLevel", &AudienceIntelligence::setLogLevelWrapper, this);
             Register("enableLAR", &AudienceIntelligence::enableLAR, this);
             Register("enableACR", &AudienceIntelligence::enableACR, this);
-<<<<<<< HEAD
-=======
 	    Register("frameSkip", &AudienceIntelligence::frameSkip, this);
->>>>>>> RDK-41446: LAR Client Implementation
             Register("setACRFrequency", &AudienceIntelligence::setACRFrequency, this);
 
 	    Register("registerListeners",&AudienceIntelligence::registerListeners, this);  //Register ACRLAR Events
@@ -202,9 +196,6 @@ namespace WPEFramework
             }
 	    returnResponse(result);
         }
-<<<<<<< HEAD
-        
-=======
        
 
 	uint32_t AudienceIntelligence::frameSkip(const JsonObject& parameters, JsonObject& response)
@@ -230,7 +221,6 @@ namespace WPEFramework
 	    returnResponse(result);
         }
 
->>>>>>> RDK-41446: LAR Client Implementation
 	uint32_t AudienceIntelligence::setACRFrequency(const JsonObject& parameters, JsonObject& response)
         {
             LOGINFOMETHOD();
@@ -419,7 +409,7 @@ namespace WPEFramework
 	void AudienceIntelligenceListener::onLARATSCMediaPlayEvent()
 	{
 		LOGINFO("onLARATSCMediaPlayEvent \n");
-		sendNotify("onLARMediaPlay",JsonObject());
+		maudintelligence.notify("onLARMediaPlay",JsonObject());
 	}
 
 

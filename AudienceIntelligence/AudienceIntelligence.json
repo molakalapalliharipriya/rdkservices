@@ -1,14 +1,4 @@
 {
-<<<<<<< HEAD
- "locator":"libWPEFrameworkAudienceIntelligence.so",
- "classname":"AudienceIntelligence",
- "precondition":[
-  "Platform"
- ],
- "callsign":"com.comcast.AudienceIntelligence",
- "autostart":false
-}
-=======
     "$schema": "https://raw.githubusercontent.com/rdkcentral/Thunder/master/Tools/JsonGenerator/schemas/interface.schema.json",
     "jsonrpc": "2.0",
     "info": {
@@ -161,6 +151,7 @@
             "result": {
                 "$ref": "#/definitions/result"
             }
-   }
+   	}
+     }
 }
->>>>>>> RDK-41446: LAR Client Implementation
+
