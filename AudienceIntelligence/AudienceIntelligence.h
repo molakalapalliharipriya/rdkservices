@@ -53,10 +53,7 @@ namespace WPEFramework {
             uint32_t setLogLevelWrapper(const JsonObject& parameters, JsonObject& response);
             uint32_t enableLAR(const JsonObject& parameters, JsonObject& response);
             uint32_t enableACR(const JsonObject& parameters, JsonObject& response);
-<<<<<<< HEAD
-=======
 	    uint32_t frameSkip(const JsonObject& parameters, JsonObject& response);
->>>>>>> RDK-41446: LAR Client Implementation
             uint32_t setACRFrequency(const JsonObject& parameters, JsonObject& response);
         	
 	    uint32_t registerListeners(const JsonObject& parameters, JsonObject& response);
