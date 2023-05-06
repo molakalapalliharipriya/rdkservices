@@ -38,6 +38,10 @@
 
 bool ACRModeEnabled = true;
 bool LARModeEnabled = true;
+<<<<<<< HEAD
+=======
+int Svalue = 0;
+>>>>>>> RDK-41446: LAR Client Implementation
 JsonArray acrevents_arr;
 
 using namespace std;
@@ -60,6 +64,10 @@ namespace WPEFramework
             Register("setLogLevel", &AudienceIntelligence::setLogLevelWrapper, this);
             Register("enableLAR", &AudienceIntelligence::enableLAR, this);
             Register("enableACR", &AudienceIntelligence::enableACR, this);
+<<<<<<< HEAD
+=======
+	    Register("frameSkip", &AudienceIntelligence::frameSkip, this);
+>>>>>>> RDK-41446: LAR Client Implementation
             Register("setACRFrequency", &AudienceIntelligence::setACRFrequency, this);
 
 	    Register("registerListeners",&AudienceIntelligence::registerListeners, this);  //Register ACRLAR Events
@@ -194,7 +202,35 @@ namespace WPEFramework
             }
 	    returnResponse(result);
         }
+<<<<<<< HEAD
         
+=======
+       
+
+	uint32_t AudienceIntelligence::frameSkip(const JsonObject& parameters, JsonObject& response)
+        {
+            LOGINFOMETHOD();
+	    bool result = true;
+            if (!parameters.HasLabel("value"))
+            {
+                result = false;
+                response["message"] = "please specify value parameter";
+            }
+            if (result)
+            {
+                Svalue = (unsigned int)parameters["value"].Number();
+                    if (Svalue <= 1)
+		    {
+			if(_acrClient) {
+                                _acrClient->updateframeskipvalue(Svalue);
+                        }
+                        response["message"] = "Updated frameSkip value";
+		    }
+            }
+	    returnResponse(result);
+        }
+
+>>>>>>> RDK-41446: LAR Client Implementation
 	uint32_t AudienceIntelligence::setACRFrequency(const JsonObject& parameters, JsonObject& response)
         {
             LOGINFOMETHOD();
