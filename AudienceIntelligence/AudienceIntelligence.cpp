@@ -409,7 +409,9 @@ namespace WPEFramework
 	void AudienceIntelligenceListener::onLARATSCMediaPlayEvent()
 	{
 		LOGINFO("onLARATSCMediaPlayEvent \n");
-		maudintelligence.notify("onLARMediaPlay",JsonObject());
+                JsonObject larevent;
+		larevent["propertyName"]=LAR_EVENTS;
+		maudintelligence.notify("onLARMediaPlay",larevent);
 	}
 
 
